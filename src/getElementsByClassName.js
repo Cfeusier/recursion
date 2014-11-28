@@ -14,9 +14,8 @@ var getElementsByClassName = function(className, node) {
   // if node has children, recurse
   if (node.children) {
     for (var i = 0; i < node.children.length; i++) {
-      var child = node.children[i];
       // add matching elements for this recursion frame
-      matches = matches.concat(getElementsByClassName(className, child));
+      matches = matches.concat(getElementsByClassName(className, node.children[i]));
     }
   }
 
